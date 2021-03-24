@@ -8,13 +8,21 @@ public class Escola implements Serializable{
 	private String nome;
 	private String cnpj;
 	private String telefone;
+	private Endereco endereco;
+	private Cidade cidade;
+	private Estado estado;
 	
 	public Escola() {}
-	public Escola(Long id, String nome, String cnpj, String telefone) {
+	
+	public Escola(Long id, String nome, String cnpj, String telefone,
+			Estado estado,Cidade cidade,Endereco endereco) {
 		this.id = id;
 		this.nome = nome;
 		this.cnpj = cnpj;
 		this.telefone = telefone;
+		estado=new Estado();
+		cidade=new Cidade();
+		endereco=new Endereco();
 	}
 	
 	public Long getId() {
@@ -42,6 +50,18 @@ public class Escola implements Serializable{
 		this.telefone = telefone;
 	}
 	
+	public Estado getEstado() {
+		return estado;
+	}
+	
+	public Cidade getCidade() {
+		return cidade;
+	}
+	
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -65,5 +85,5 @@ public class Escola implements Serializable{
 			return false;
 		return true;
 	}
-
-}
+	
+	}
