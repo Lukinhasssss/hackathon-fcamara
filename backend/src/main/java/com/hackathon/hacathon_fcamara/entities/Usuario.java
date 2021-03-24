@@ -8,13 +8,21 @@ public class Usuario implements Serializable{
 	private Long id;
 	private String nome;
 	private String telefone;
+	private Endereco endereco;
+	private Cidade cidade;
+	private Estado estado;
+	
 	public Usuario() {}
-	public Usuario(Long id, String nome, String telefone) {
-		super();
+	
+	public Usuario(Long id, String nome, String telefone,Endereco endereco
+			,Cidade cidade, Estado estado) {
 		this.id = id;
 		this.nome = nome;
 		this.telefone = telefone;
-	}
+		endereco=new Endereco();
+		cidade=new Cidade();
+		estado=new Estado();
+			}
 	
 	public Long getId() {
 		return id;
@@ -35,6 +43,16 @@ public class Usuario implements Serializable{
 		this.telefone = telefone;
 	}
 
+	public Estado getEstado() {
+		return estado;
+	}
+	public Cidade getCidade() {
+		return cidade;
+	}
+	public Endereco getEndereco() {
+		return endereco;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
