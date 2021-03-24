@@ -9,7 +9,13 @@ public class Escola implements Serializable{
 	private String cnpj;
 	private String telefone;
 	
-
+	public Escola() {}
+	public Escola(Long id, String nome, String cnpj, String telefone) {
+		this.id = id;
+		this.nome = nome;
+		this.cnpj = cnpj;
+		this.telefone = telefone;
+	}
 	
 	public Long getId() {
 		return id;
@@ -35,13 +41,7 @@ public class Escola implements Serializable{
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-	public Escola() {}
-	public Escola(Long id, String nome, String cnpj, String telefone) {
-		this.id = id;
-		this.nome = nome;
-		this.cnpj = cnpj;
-		this.telefone = telefone;
-	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
