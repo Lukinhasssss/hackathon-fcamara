@@ -1,58 +1,66 @@
 package com.hackathon.hacathon_fcamara.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Usuario implements Serializable{
+public class Usuario implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
+	
 	private Long id;
 	private String nome;
 	private String telefone;
-	private Endereco endereco;
-	private Cidade cidade;
-	private Estado estado;
+	
+	private Escola escola;
+	
+	private List<Material> materiais = new ArrayList<>();
 	
 	public Usuario() {}
 	
-	public Usuario(Long id, String nome, String telefone,Endereco endereco
-			,Cidade cidade, Estado estado) {
+	public Usuario(Long id, String nome, String telefone, Escola escola) {
 		this.id = id;
 		this.nome = nome;
 		this.telefone = telefone;
-		endereco=new Endereco();
-		cidade=new Cidade();
-		estado=new Estado();
-			}
-	
+		this.escola = escola;
+	}
+
 	public Long getId() {
 		return id;
 	}
+	
 	public void setId(Long id) {
 		this.id = id;
 	}
+	
 	public String getNome() {
 		return nome;
 	}
+	
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	
 	public String getTelefone() {
 		return telefone;
 	}
+	
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-
-	public Estado getEstado() {
-		return estado;
-	}
-	public Cidade getCidade() {
-		return cidade;
-	}
-	public Endereco getEndereco() {
-		return endereco;
+	
+	public Escola getEscola() {
+		return escola;
 	}
 	
+	public void setEscola(Escola escola) {
+		this.escola = escola;
+	}
+	
+	public List<Material> getMateriais() {
+		return materiais;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -77,7 +85,5 @@ public class Usuario implements Serializable{
 			return false;
 		return true;
 	}
-	
-	
 
 }

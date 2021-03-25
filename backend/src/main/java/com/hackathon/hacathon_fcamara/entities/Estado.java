@@ -1,12 +1,17 @@
 package com.hackathon.hacathon_fcamara.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Estado implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	
 	private Long id;
 	private String nome;
+	
+	private List<Cidade> cidades = new ArrayList<>();
 	
 	public Estado() {}
 	
@@ -29,6 +34,10 @@ public class Estado implements Serializable {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	
+	public List<Cidade> getCidades() {
+		return cidades;
 	}
 
 	@Override

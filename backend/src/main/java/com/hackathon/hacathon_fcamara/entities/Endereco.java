@@ -1,24 +1,33 @@
 package com.hackathon.hacathon_fcamara.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Endereco implements Serializable {
+	
 	private static final long serialVersionUID = 1L;
+	
 	private Long id;
-	private String logradoura;
+	private String logradouro;
 	private Integer numero;
 	private String bairro;
 	private String cep;
 	
-	public Endereco() {}
+	private Cidade cidade;
+	private Escola escola;
 	
-	public Endereco(Long id, String lougadoura,Integer numero,
-			String bairro,String cep) {
+	private List<Livraria> livrarias = new ArrayList<>();
+	
+	public Endereco() {}
+
+	public Endereco(Long id, String logradouro, Integer numero, String bairro, String cep, Cidade cidade, Escola escola) {
 		this.id = id;
-		this.logradoura=logradoura;
-		this.numero=numero;
-		this.bairro=bairro;
-		this.cep=cep;
+		this.logradouro = logradouro;
+		this.numero = numero;
+		this.bairro = bairro;
+		this.cep = cep;
+		this.cidade = cidade;
 	}
 
 	public Long getId() {
@@ -29,12 +38,12 @@ public class Endereco implements Serializable {
 		this.id = id;
 	}
 
-	public String getLogradoura() {
-		return logradoura;
+	public String getLogradouro() {
+		return logradouro;
 	}
 
-	public void setLogradoura(String logradoura) {
-		this.logradoura = logradoura;
+	public void setLogradouro(String logradouro) {
+		this.logradouro = logradouro;
 	}
 
 	public Integer getNumero() {
@@ -61,6 +70,26 @@ public class Endereco implements Serializable {
 		this.cep = cep;
 	}
 
+	public Cidade getCidade() {
+		return cidade;
+	}
+
+	public void setCidade(Cidade cidade) {
+		this.cidade = cidade;
+	}
+
+	public Escola getEscola() {
+		return escola;
+	}
+
+	public void setEscola(Escola escola) {
+		this.escola = escola;
+	}
+
+	public List<Livraria> getLivrarias() {
+		return livrarias;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -85,8 +114,5 @@ public class Endereco implements Serializable {
 			return false;
 		return true;
 	}
-
-
-   
 
 }
