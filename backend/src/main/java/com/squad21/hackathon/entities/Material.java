@@ -25,9 +25,6 @@ public class Material implements Serializable {
 	@ManyToMany(mappedBy = "materiais")
 	private List<Usuario> usuarios = new ArrayList<>();
 	
-	@ManyToMany(mappedBy = "materiais")
-	private List<Livraria> livrarias = new ArrayList<>();
-	
 	public Material() {}
 	
 	public Material(Long id, String nome) {
@@ -53,10 +50,6 @@ public class Material implements Serializable {
 	
 	public List<Usuario> getUsuarios() {
 		return usuarios;
-	}
-
-	public List<Livraria> getLivrarias() {
-		return livrarias;
 	}
 
 	@Override

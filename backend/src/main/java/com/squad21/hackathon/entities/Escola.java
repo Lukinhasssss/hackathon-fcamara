@@ -1,16 +1,12 @@
 package com.squad21.hackathon.entities;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -30,13 +26,6 @@ public class Escola implements Serializable {
 	@OneToOne()
 	@JoinColumn(name = "endereco_id")
 	private Endereco endereco;
-	
-	@ManyToMany
-	@JoinTable(name = "tb_escola_livraria",
-		joinColumns = @JoinColumn(name = "escola_id"),
-		inverseJoinColumns = @JoinColumn(name = "livraria_id")
-	)
-	private List<Livraria> livrarias = new ArrayList<>();
 	
 	public Escola() {}
 	
@@ -86,14 +75,6 @@ public class Escola implements Serializable {
 	
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
-	}
-	
-//	public List<Usuario> getUsuarios() {
-//		return usuarios;
-//	}
-
-	public List<Livraria> getLivrarias() {
-		return livrarias;
 	}
 
 	@Override
