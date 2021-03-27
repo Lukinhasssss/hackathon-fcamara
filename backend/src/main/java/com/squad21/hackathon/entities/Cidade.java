@@ -22,7 +22,7 @@ public class Cidade implements Serializable {
 	private String nome;
 	
 	@ManyToOne()
-	@JoinColumn(name = "estado_id")
+	@JoinColumn(name = "estado_id", referencedColumnName = "id")
 	private Estado estado;
 	
 	public Cidade() {}
@@ -49,7 +49,7 @@ public class Cidade implements Serializable {
 		this.nome = nome;
 	}
 	
-	public Estado getEstados() {
+	public Estado getEstado() {
 		return estado;
 	}
 	

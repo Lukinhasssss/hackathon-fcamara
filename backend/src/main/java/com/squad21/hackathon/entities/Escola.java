@@ -24,7 +24,7 @@ public class Escola implements Serializable {
 	private String telefone;
 	
 	@OneToOne()
-	@JoinColumn(name = "endereco_id")
+	@JoinColumn(name = "endereco_id", referencedColumnName = "id")
 	private Endereco endereco;
 	
 	public Escola() {}

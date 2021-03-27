@@ -1,43 +1,30 @@
-package com.squad21.hackathon.entities;
+package com.squad21.hackathon.dto;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.squad21.hackathon.entities.Cidade;
+import com.squad21.hackathon.entities.Endereco;
+import com.squad21.hackathon.entities.Escola;
 
-@Entity
-@Table(name = "tb_endereco")
-public class Endereco implements Serializable {
+public class EnderecoDTO implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String logradouro;
 	private Integer numero;
 	private String bairro;
 	private String cep;
-	
-	@ManyToOne
-	@JoinColumn(name = "cidade_id")
+
 	private Cidade cidade;
 	
 	@JsonIgnore
-	@OneToOne(mappedBy = "endereco")
 	private Escola escola;
 	
-	public Endereco() {}
+	public EnderecoDTO() {}
 
-	public Endereco(Long id, String logradouro, Integer numero, String bairro, String cep, Cidade cidade, Escola escola) {
+	public EnderecoDTO(Long id, String logradouro, Integer numero, String bairro, String cep, Cidade cidade, Escola escola) {
 		this.id = id;
 		this.logradouro = logradouro;
 		this.numero = numero;
@@ -45,6 +32,16 @@ public class Endereco implements Serializable {
 		this.cep = cep;
 		this.cidade = cidade;
 		this.escola = escola;
+	}
+	
+	public EnderecoDTO(Endereco endereco) {
+		id = endereco.getId();
+		logradouro = endereco.getLogradouro();
+		numero = endereco.getNumero();
+		bairro = endereco.getBairro();
+		cep = endereco.getCep();
+		cidade = endereco.getCidade();
+		escola = endereco.getEscola();
 	}
 
 	public Long getId() {
@@ -101,31 +98,6 @@ public class Endereco implements Serializable {
 
 	public void setEscola(Escola escola) {
 		this.escola = escola;
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Endereco other = (Endereco) obj;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		return true;
 	}
 
 }
