@@ -9,12 +9,6 @@ INSERT INTO tb_endereco (logradouro, numero, bairro, cep, cidade_id) VALUES ('Es
 
 INSERT INTO tb_escola (nome, telefone, cnpj, endereco_id) VALUES ('Escola Estadual Jacob Casseb', '49123583', '25987459821234', 3);
 
-INSERT INTO tb_livraria (nome, telefone, cnpj) VALUES ('Saraiva', '48215786', '95135785245684');
-
-INSERT INTO tb_livraria_endereco (livraria_id, endereco_id) VALUES (1, 1);
-
-INSERT INTO tb_escola_livraria (escola_id, livraria_id) VALUES (1, 1);
-
 INSERT INTO tb_usuario (nome, telefone, escola_id) VALUES ('Bob Brown', '987568933', 1);
 INSERT INTO tb_usuario (nome, telefone, escola_id) VALUES ('Maria Green', '963332156', 1);
 
@@ -28,10 +22,3 @@ INSERT INTO tb_usuario_material (usuario_id, material_id) VALUES (2, 3);
 INSERT INTO tb_usuario_material (usuario_id, material_id) VALUES (2, 4);
 INSERT INTO tb_usuario_material (usuario_id, material_id) VALUES (2, 5);
 INSERT INTO tb_usuario_material (usuario_id, material_id) VALUES (2, 6);
-
-INSERT INTO tb_livraria_material (livraria_id, material_id) VALUES (1, 1);
-INSERT INTO tb_livraria_material (livraria_id, material_id) VALUES (1, 2);
-INSERT INTO tb_livraria_material (livraria_id, material_id) VALUES (1, 3);
-INSERT INTO tb_livraria_material (livraria_id, material_id) VALUES (1, 4);
-INSERT INTO tb_livraria_material (livraria_id, material_id) VALUES (1, 5);
-INSERT INTO tb_livraria_material (livraria_id, material_id) VALUES (1, 6);
