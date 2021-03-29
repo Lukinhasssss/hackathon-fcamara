@@ -2,46 +2,43 @@ package com.squad21.hackathon.dto;
 
 import java.io.Serializable;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.squad21.hackathon.entities.Cidade;
-import com.squad21.hackathon.entities.Endereco;
-import com.squad21.hackathon.entities.Escola;
+import com.squad21.hackathon.entities.Coleta;
 
-public class EnderecoDTO implements Serializable {
+public class ColetaDTO implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
 	private Long id;
+	private String nome;
 	private String logradouro;
 	private Integer numero;
 	private String bairro;
 	private String cep;
-
-	private Cidade cidade;
+	private String cidade;
+	private String estado;
 	
-	@JsonIgnore
-	private Escola escola;
-	
-	public EnderecoDTO() {}
+	public ColetaDTO() {}
 
-	public EnderecoDTO(Long id, String logradouro, Integer numero, String bairro, String cep, Cidade cidade, Escola escola) {
+	public ColetaDTO(Long id, String nome, String logradouro, Integer numero, String bairro, String cep, String cidade, String estado) {
 		this.id = id;
+		this.nome = nome;
 		this.logradouro = logradouro;
 		this.numero = numero;
 		this.bairro = bairro;
 		this.cep = cep;
 		this.cidade = cidade;
-		this.escola = escola;
+		this.estado = estado;
 	}
 	
-	public EnderecoDTO(Endereco endereco) {
-		id = endereco.getId();
-		logradouro = endereco.getLogradouro();
-		numero = endereco.getNumero();
-		bairro = endereco.getBairro();
-		cep = endereco.getCep();
-		cidade = endereco.getCidade();
-		escola = endereco.getEscola();
+	public ColetaDTO(Coleta coleta) {
+		id = coleta.getId();
+		nome = coleta.getNome();
+		logradouro = coleta.getLogradouro();
+		numero = coleta.getNumero();
+		bairro = coleta.getBairro();
+		cep = coleta.getCep();
+		cidade = coleta.getCidade();
+		estado = coleta.getEstado();
 	}
 
 	public Long getId() {
@@ -50,6 +47,14 @@ public class EnderecoDTO implements Serializable {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public String getLogradouro() {
@@ -83,21 +88,21 @@ public class EnderecoDTO implements Serializable {
 	public void setCep(String cep) {
 		this.cep = cep;
 	}
-
-	public Cidade getCidade() {
+	
+	public String getCidade() {
 		return cidade;
 	}
 
-	public void setCidade(Cidade cidade) {
+	public void setCidade(String cidade) {
 		this.cidade = cidade;
 	}
 
-	public Escola getEscola() {
-		return escola;
+	public String getEstado() {
+		return estado;
 	}
 
-	public void setEscola(Escola escola) {
-		this.escola = escola;
+	public void setEstado(String estado) {
+		this.estado = estado;
 	}
 
 }

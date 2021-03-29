@@ -6,45 +6,35 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 @Entity
-@Table(name = "tb_endereco")
-public class Endereco implements Serializable {
+@Table(name = "tb_coleta")
+public class Coleta implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	private String nome;
 	private String logradouro;
 	private Integer numero;
 	private String bairro;
 	private String cep;
+	private String cidade;
+	private String estado;
 	
-	@ManyToOne
-	@JoinColumn(name = "cidade_id")
-	private Cidade cidade;
-	
-	@JsonIgnore
-	@OneToOne(mappedBy = "endereco")
-	private Escola escola;
-	
-	public Endereco() {}
+	public Coleta() {}
 
-	public Endereco(Long id, String logradouro, Integer numero, String bairro, String cep, Cidade cidade, Escola escola) {
+	public Coleta(Long id, String nome, String logradouro, Integer numero, String bairro, String cep, String cidade, String estado) {
 		this.id = id;
 		this.logradouro = logradouro;
 		this.numero = numero;
 		this.bairro = bairro;
 		this.cep = cep;
 		this.cidade = cidade;
-		this.escola = escola;
+		this.estado = estado;
 	}
 
 	public Long getId() {
@@ -53,6 +43,14 @@ public class Endereco implements Serializable {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+	
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public String getLogradouro() {
@@ -86,21 +84,21 @@ public class Endereco implements Serializable {
 	public void setCep(String cep) {
 		this.cep = cep;
 	}
-
-	public Cidade getCidade() {
+	
+	public String getCidade() {
 		return cidade;
 	}
 
-	public void setCidade(Cidade cidade) {
+	public void setCidade(String cidade) {
 		this.cidade = cidade;
 	}
 
-	public Escola getEscola() {
-		return escola;
+	public String getEstado() {
+		return estado;
 	}
 
-	public void setEscola(Escola escola) {
-		this.escola = escola;
+	public void setEstado(String estado) {
+		this.estado = estado;
 	}
 
 	@Override
@@ -119,7 +117,7 @@ public class Endereco implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Endereco other = (Endereco) obj;
+		Coleta other = (Coleta) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;

@@ -1,24 +1,3 @@
-INSERT INTO tb_estado (nome) VALUES ('MG'), ('SP');
-
-INSERT INTO tb_cidade (nome, estado_id) VALUES ('Belo Horizonte', 1), ('Brumadinho', 1), ('Ibirité', 1), ('Mário Campos', 1);
-INSERT INTO tb_cidade (nome, estado_id) VALUES ('Diadema', 2), ('Guarulhos', 2), ('São Bernardo Do Campo', 2), ('São Paulo', 2);
-
-INSERT INTO tb_endereco (logradouro, numero, bairro, cep, cidade_id) VALUES ('Rua Porto Feliz', 25, 'Jd. das Oliveiras', '09847305', 7);
-INSERT INTO tb_endereco (logradouro, numero, bairro, cep, cidade_id) VALUES ('Rua Miro Vetorazzo', 1075, 'Demarchi', '09820135', 7);
-INSERT INTO tb_endereco (logradouro, numero, bairro, cep, cidade_id) VALUES ('Estrada da Cama Patente', 200, 'Parque Esmeralda', '09842100', 7);
-
-INSERT INTO tb_escola (nome, telefone, cnpj, endereco_id) VALUES ('Escola Estadual Jacob Casseb', '49123583', '25987459821234', 3);
-
-INSERT INTO tb_usuario (nome, telefone, escola_id) VALUES ('Bob Brown', '987568933', 1);
-INSERT INTO tb_usuario (nome, telefone, escola_id) VALUES ('Maria Green', '963332156', 1);
-
-INSERT INTO tb_material (nome) VALUES ('Lápis Preto'), ('Caderno 10 Matérias'), ('Borracha'), ('Mochila'), ('Caneta Azul'), ('Régua');
-
-INSERT INTO tb_usuario_material (usuario_id, material_id) VALUES (1, 1);
-INSERT INTO tb_usuario_material (usuario_id, material_id) VALUES (1, 3);
-INSERT INTO tb_usuario_material (usuario_id, material_id) VALUES (1, 5);
-INSERT INTO tb_usuario_material (usuario_id, material_id) VALUES (2, 2);
-INSERT INTO tb_usuario_material (usuario_id, material_id) VALUES (2, 3);
-INSERT INTO tb_usuario_material (usuario_id, material_id) VALUES (2, 4);
-INSERT INTO tb_usuario_material (usuario_id, material_id) VALUES (2, 5);
-INSERT INTO tb_usuario_material (usuario_id, material_id) VALUES (2, 6);
+INSERT INTO tb_coleta (nome, logradouro, numero, bairro, cep, cidade, estado) VALUES ('Escola Estadual 1', 'Rua 1', 12, 'Jd. das Oliveiras', '09847305', 'São Bernardo Do Campo', 'São Paulo');
+INSERT INTO tb_coleta (nome, logradouro, numero, bairro, cep, cidade, estado) VALUES ('Escola Municipal 1', 'Rua 1', 24, 'Santa Maria', '32470267', 'Ibirité', 'Minas Gerais');
+INSERT INTO tb_coleta (nome, logradouro, numero, bairro, cep, cidade, estado) VALUES ('Escola Estadual 2', 'Avenida 1', 36, 'Jd. das Orquideas', '09842100', 'São Bernardo Do Campo', 'São Paulo');
