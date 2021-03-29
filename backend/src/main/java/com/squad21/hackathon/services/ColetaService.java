@@ -16,7 +16,8 @@ public class ColetaService {
 	private ColetaRepository repository;
 	
 	public Page<ColetaDTO> findAllPaged(String cidade, PageRequest pageRequest) {
-		Page<Coleta> pontosDeColeta = repository.findAll(pageRequest);
+		if (cidade.isEmpty()) { cidade = null; }
+		Page<Coleta> pontosDeColeta = repository.find(cidade, pageRequest);
 		return pontosDeColeta.map(pontoDeColeta -> new ColetaDTO(pontoDeColeta));
 	}
 	
