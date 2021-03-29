@@ -11,20 +11,22 @@ public class ColetaDTO implements Serializable {
 	private Long id;
 	private String nome;
 	private String logradouro;
-	private Integer numero;
+	private String numero;
 	private String bairro;
+	private String complemento;
 	private String cep;
 	private String cidade;
 	private String estado;
 	
 	public ColetaDTO() {}
 
-	public ColetaDTO(Long id, String nome, String logradouro, Integer numero, String bairro, String cep, String cidade, String estado) {
+	public ColetaDTO(Long id, String nome, String logradouro, String numero, String bairro, String complemento, String cep, String cidade, String estado) {
 		this.id = id;
 		this.nome = nome;
 		this.logradouro = logradouro;
 		this.numero = numero;
 		this.bairro = bairro;
+		this.complemento = complemento;
 		this.cep = cep;
 		this.cidade = cidade;
 		this.estado = estado;
@@ -36,6 +38,7 @@ public class ColetaDTO implements Serializable {
 		logradouro = coleta.getLogradouro();
 		numero = coleta.getNumero();
 		bairro = coleta.getBairro();
+		complemento = coleta.getComplemento();
 		cep = coleta.getCep();
 		cidade = coleta.getCidade();
 		estado = coleta.getEstado();
@@ -65,11 +68,11 @@ public class ColetaDTO implements Serializable {
 		this.logradouro = logradouro;
 	}
 
-	public Integer getNumero() {
+	public String getNumero() {
 		return numero;
 	}
 
-	public void setNumero(Integer numero) {
+	public void setNumero(String numero) {
 		this.numero = numero;
 	}
 
@@ -79,6 +82,14 @@ public class ColetaDTO implements Serializable {
 
 	public void setBairro(String bairro) {
 		this.bairro = bairro;
+	}
+
+	public String getComplemento() {
+		return complemento;
+	}
+
+	public void setComplemento(String complemento) {
+		this.complemento = complemento;
 	}
 
 	public String getCep() {

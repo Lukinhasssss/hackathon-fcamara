@@ -15,7 +15,7 @@ public class ColetaService {
 	@Autowired
 	private ColetaRepository repository;
 	
-	public Page<ColetaDTO> findAllPaged(PageRequest pageRequest) {
+	public Page<ColetaDTO> findAllPaged(String cidade, PageRequest pageRequest) {
 		Page<Coleta> pontosDeColeta = repository.findAll(pageRequest);
 		return pontosDeColeta.map(pontoDeColeta -> new ColetaDTO(pontoDeColeta));
 	}
@@ -26,6 +26,7 @@ public class ColetaService {
 		pontoDeColeta.setLogradouro(coletaDTO.getLogradouro());
 		pontoDeColeta.setNumero(coletaDTO.getNumero());
 		pontoDeColeta.setBairro(coletaDTO.getBairro());
+		pontoDeColeta.setComplemento(coletaDTO.getComplemento());
 		pontoDeColeta.setCep(coletaDTO.getCep());
 		pontoDeColeta.setCidade(coletaDTO.getCidade());
 		pontoDeColeta.setEstado(coletaDTO.getEstado());
