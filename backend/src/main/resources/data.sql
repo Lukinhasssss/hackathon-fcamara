@@ -1,0 +1,3 @@
+INSERT INTO tb_coleta (nome, logradouro, numero, bairro, cep, cidade, estado) VALUES ('Escola Estadual 1', 'Rua 1', '973', 'Jd. das Oliveiras', '09847305', 'São Bernardo Do Campo', 'São Paulo');
+INSERT INTO tb_coleta (nome, logradouro, numero, bairro, cep, cidade, estado) VALUES ('Escola Municipal 1', 'Rua 3', '275', 'Santa Maria', '32470267', 'Ibirité', 'Minas Gerais');
+INSERT INTO tb_coleta (nome, logradouro, numero, bairro, cep, cidade, estado) VALUES ('Escola Estadual 2', 'Avenida 1', '1316', 'Jd. das Orquideas', '09842100', 'São Bernardo Do Campo', 'São Paulo');

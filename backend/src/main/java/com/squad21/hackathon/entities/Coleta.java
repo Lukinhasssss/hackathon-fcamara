@@ -1,33 +1,42 @@
-package com.hackathon.hacathon_fcamara.entities;
+package com.squad21.hackathon.entities;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
-public class Endereco implements Serializable {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tb_coleta")
+public class Coleta implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	private String nome;
 	private String logradouro;
-	private Integer numero;
+	private String numero;
 	private String bairro;
+	private String complemento;
 	private String cep;
+	private String cidade;
+	private String estado;
 	
-	private Cidade cidade;
-	private Escola escola;
-	
-	private List<Livraria> livrarias = new ArrayList<>();
-	
-	public Endereco() {}
+	public Coleta() {}
 
-	public Endereco(Long id, String logradouro, Integer numero, String bairro, String cep, Cidade cidade, Escola escola) {
+	public Coleta(Long id, String nome, String logradouro, String numero, String bairro, String complemento, String cep, String cidade, String estado) {
 		this.id = id;
 		this.logradouro = logradouro;
 		this.numero = numero;
 		this.bairro = bairro;
+		this.complemento = complemento;
 		this.cep = cep;
 		this.cidade = cidade;
+		this.estado = estado;
 	}
 
 	public Long getId() {
@@ -36,6 +45,14 @@ public class Endereco implements Serializable {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+	
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public String getLogradouro() {
@@ -46,11 +63,11 @@ public class Endereco implements Serializable {
 		this.logradouro = logradouro;
 	}
 
-	public Integer getNumero() {
+	public String getNumero() {
 		return numero;
 	}
 
-	public void setNumero(Integer numero) {
+	public void setNumero(String numero) {
 		this.numero = numero;
 	}
 
@@ -62,6 +79,14 @@ public class Endereco implements Serializable {
 		this.bairro = bairro;
 	}
 
+	public String getComplemento() {
+		return complemento;
+	}
+
+	public void setComplemento(String complemento) {
+		this.complemento = complemento;
+	}
+
 	public String getCep() {
 		return cep;
 	}
@@ -69,25 +94,21 @@ public class Endereco implements Serializable {
 	public void setCep(String cep) {
 		this.cep = cep;
 	}
-
-	public Cidade getCidade() {
+	
+	public String getCidade() {
 		return cidade;
 	}
 
-	public void setCidade(Cidade cidade) {
+	public void setCidade(String cidade) {
 		this.cidade = cidade;
 	}
 
-	public Escola getEscola() {
-		return escola;
+	public String getEstado() {
+		return estado;
 	}
 
-	public void setEscola(Escola escola) {
-		this.escola = escola;
-	}
-
-	public List<Livraria> getLivrarias() {
-		return livrarias;
+	public void setEstado(String estado) {
+		this.estado = estado;
 	}
 
 	@Override
@@ -106,7 +127,7 @@ public class Endereco implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Endereco other = (Endereco) obj;
+		Coleta other = (Coleta) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
