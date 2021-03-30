@@ -9,7 +9,7 @@ import com.squad21.hackathon.entities.Coleta;
 
 public interface ColetaRepository extends JpaRepository<Coleta, Long> {
 	
-	@Query("SELECT obj FROM Coleta obj WHERE (:cidade = obj.cidade OR :cidade IS NULL)")
+	@Query("SELECT obj FROM Coleta obj WHERE (LOWER(obj.cidade) LIKE LOWER(CONCAT('%',:cidade,'%')) OR :cidade IS NULL)")
 	Page<Coleta> find(String cidade, Pageable pageable);
 
 }
