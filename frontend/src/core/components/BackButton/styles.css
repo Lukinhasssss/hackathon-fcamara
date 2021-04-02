@@ -1,0 +1,8 @@
+.back-button-content {
+  display: flex;
+  align-items: center;
+}
+
+.back-button-content span {
+  padding-left: 15px;
+}
