@@ -10,6 +10,7 @@ public class ColetaDTO implements Serializable {
 	
 	private Long id;
 	private String nome;
+	private String imgUrl;
 	private String logradouro;
 	private String numero;
 	private String bairro;
@@ -20,9 +21,10 @@ public class ColetaDTO implements Serializable {
 	
 	public ColetaDTO() {}
 
-	public ColetaDTO(Long id, String nome, String logradouro, String numero, String bairro, String complemento, String cep, String cidade, String estado) {
+	public ColetaDTO(Long id, String nome, String imgUrl, String logradouro, String numero, String bairro, String complemento, String cep, String cidade, String estado) {
 		this.id = id;
 		this.nome = nome;
+		this.imgUrl = imgUrl;
 		this.logradouro = logradouro;
 		this.numero = numero;
 		this.bairro = bairro;
@@ -35,6 +37,7 @@ public class ColetaDTO implements Serializable {
 	public ColetaDTO(Coleta coleta) {
 		id = coleta.getId();
 		nome = coleta.getNome();
+		imgUrl = coleta.getImgUrl();
 		logradouro = coleta.getLogradouro();
 		numero = coleta.getNumero();
 		bairro = coleta.getBairro();
@@ -58,6 +61,14 @@ public class ColetaDTO implements Serializable {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	
+	public String getImgUrl() {
+		return imgUrl;
+	}
+	
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
 	}
 
 	public String getLogradouro() {
