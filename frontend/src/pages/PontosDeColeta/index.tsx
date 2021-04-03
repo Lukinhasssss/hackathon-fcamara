@@ -1,9 +1,23 @@
+import { useEffect, useState } from 'react'
 import BackButton from '../../core/components/BackButton'
 import Header from '../../core/components/Header'
 import PontoDeColeta from '../../core/components/PontoDeColeta'
+import { RespostaColeta } from '../../core/types/Coleta'
+import { makeRequest } from '../../core/utils/request'
 import './styles.css'
 
 const PontosDeColeta = () => {
+  const [respostaColeta, setRespostaColeta] = useState<RespostaColeta>()
+
+  const getPontosDeColeta = () => {
+    makeRequest({ url: '/pontosdecoleta' })
+      .then(resposta => setRespostaColeta(resposta.data))
+  }
+
+  useEffect(() => {
+    getPontosDeColeta()
+  })
+
   return (
     <>
       <Header>
@@ -12,14 +26,14 @@ const PontosDeColeta = () => {
 
       <div className="coleta-container">
         <div className="escolas-encontradas">
-          <span>3</span>
+          <span>{ respostaColeta?.totalElements }</span>
           <p>escolas encontradas</p>
         </div>
 
         <div className="ponto-de-coleta">
-          <PontoDeColeta />
-          <PontoDeColeta />
-          <PontoDeColeta />
+          { respostaColeta?.content.map(coleta => (
+            <PontoDeColeta coleta={ coleta } />
+          )) }
         </div>
       </div>
     </>

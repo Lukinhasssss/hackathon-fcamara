@@ -1,17 +1,22 @@
+import { Coleta } from '../../types/Coleta'
 import './styles.css'
 
-const PontoDeColeta = () => {
+type Props = {
+  coleta: Coleta
+}
+
+const PontoDeColeta = ({ coleta }:Props) => {
   return (
     <div className="ponto-de-coleta-container">
       <div className="ponto-de-coleta-img-container">
-        <img src="https://diversa.org.br/wp-content/uploads/2020/04/Marcos-Santos_USP-Imagens_6-1024x704.jpg" alt="escola.nome"/>
+        <img src={ coleta.imgUrl } alt={ coleta.nome } />
       </div>
 
-      <h2>Escola Pedro Alvarez Cabral</h2>
+      <h2>{ coleta.nome }</h2>
       
-      <p>Barueri, São Paulo</p>
-      <p>Rua João Lopez</p>
-      <p>Nº 532</p>
+      <p>{ coleta.cidade }, { coleta.estado }</p>
+      <p>{ coleta.logradouro }, { coleta.bairro }</p>
+      <p>Nº { coleta.numero }</p>
     </div>
   )
 }
