@@ -1,0 +1,43 @@
+.coleta-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  /* margin-top: 100px; */
+}
+
+.escolas-encontradas {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.escolas-encontradas span {
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: bold;
+  color: #079649;
+  margin-right: 5px;
+}
+
+.escolas-encontradas p {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  color: var(--gray);
+}
+
+.ponto-de-coleta {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 30px;
+  column-gap: 30px;
+  margin-top: 30px;
+  margin-bottom: 80px;
+}
