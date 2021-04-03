@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import BackButton from '../../core/components/BackButton'
 import Header from '../../core/components/Header'
 import PontoDeColeta from '../../core/components/PontoDeColeta'
@@ -9,14 +9,8 @@ import './styles.css'
 const PontosDeColeta = () => {
   const [respostaColeta, setRespostaColeta] = useState<RespostaColeta>()
 
-  const getPontosDeColeta = () => {
-    makeRequest({ url: '/pontosdecoleta' })
-      .then(resposta => setRespostaColeta(resposta.data))
-  }
-
-  useEffect(() => {
-    getPontosDeColeta()
-  })
+  makeRequest({ url: '/pontosdecoleta', method: 'GET' })
+    .then(resposta => setRespostaColeta(resposta.data))
 
   return (
     <>
