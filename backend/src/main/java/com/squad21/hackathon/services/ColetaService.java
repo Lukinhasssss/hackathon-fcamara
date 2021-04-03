@@ -28,8 +28,6 @@ public class ColetaService {
 		pontoDeColeta.setLogradouro(coletaDTO.getLogradouro());
 		pontoDeColeta.setNumero(coletaDTO.getNumero());
 		pontoDeColeta.setBairro(coletaDTO.getBairro());
-		pontoDeColeta.setComplemento(coletaDTO.getComplemento());
-		pontoDeColeta.setCep(coletaDTO.getCep());
 		pontoDeColeta.setCidade(coletaDTO.getCidade());
 		pontoDeColeta.setEstado(coletaDTO.getEstado());
 		
