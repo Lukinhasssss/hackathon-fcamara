@@ -9,7 +9,8 @@ import './styles.css'
 const PontosDeColeta = () => {
   const [respostaColeta, setRespostaColeta] = useState<RespostaColeta>()
 
-  makeRequest({ url: '/pontosdecoleta', method: 'GET' })
+  makeRequest({ url: '/pontosdecoleta' })
+    // .then(resposta => console.log(resposta.data))
     .then(resposta => setRespostaColeta(resposta.data))
 
   return (
