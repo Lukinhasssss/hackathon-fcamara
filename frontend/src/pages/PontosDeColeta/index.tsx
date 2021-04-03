@@ -32,7 +32,7 @@ const PontosDeColeta = () => {
 
         <div className="ponto-de-coleta">
           { respostaColeta?.content.map(coleta => (
-            <PontoDeColeta coleta={ coleta } />
+            <PontoDeColeta key={ coleta.id } coleta={ coleta } />
           )) }
         </div>
       </div>

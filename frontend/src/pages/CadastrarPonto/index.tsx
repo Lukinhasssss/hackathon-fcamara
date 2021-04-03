@@ -1,50 +1,106 @@
-import BackButton from '../../core/components/BackButton'
+import { useForm } from 'react-hook-form'
+
 import Header from '../../core/components/Header'
+import BackButton from '../../core/components/BackButton'
+import { makeRequest } from '../../core/utils/request'
+
 import './styles.css'
 
+type FormData = {
+  nome: string
+  imgUrl: string
+  logradouro: string
+  numero: string
+  bairro: string
+  cidade: string
+  estado: string
+}
+
 const CadastrarPonto = () => {
+  const { handleSubmit, register } = useForm<FormData>()
+
+  const onSubmit = (data: FormData) => {
+    makeRequest({
+      url: '/pontosdecoleta',
+      method: 'POST',
+      data: data
+    }).then(() => {
+
+    }).catch(() => {
+
+    })
+  }
+
   return (
     <>
       <Header>
         <BackButton />
       </Header>
 
-      <form className="cadastro-container">
+      <form onSubmit={ handleSubmit(onSubmit) } className="cadastro-container">
         <div className="cadastro-content">
           <h1>Cadastre aqui o ponto de coleta</h1>
 
           <h2>Dados do local</h2>
 
           <span>Nome do local</span>
-          <input type="text" className="coleta-w100" />
+          <input
+            {...register("nome")}
+            type="text"
+            className="coleta-w100"
+          />
 
           <span>URL da imagem</span>
-          <input type="text" className="coleta-w100" />
+          <input
+            {...register("imgUrl")}
+            type="text"
+            className="coleta-w100"
+          />
 
           <div className="coleta-column-2">
             <div>
               <span>Logradouro</span>
-              <input type="text" className="coleta-w100" />
+              <input
+                {...register("logradouro")}
+                type="text"
+                className="coleta-w100"
+              />
             </div>
 
             <div className="coleta-column-number">
               <span>Número</span>
-              <input type="text" className="coleta-w100" />
+              <input
+                {...register("numero")}
+                type="number"
+                className="coleta-w100"
+              />
             </div>
           </div>
 
           <span>Bairro</span>
-          <input type="text" className="coleta-w100" />
+          <input
+            {...register("bairro")}
+            type="text"
+            className="coleta-w100"
+          />
 
           <div className="coleta-column-2">
             <div>
               <span>Cidade</span>
-              <input type="text" className="coleta-w100" />
+              <input
+                {...register("cidade")}
+                type="text"
+                className="coleta-w100"
+              />
             </div>
 
             <div className="coleta-column-estado">
               <span>Estado</span>
-              <input type="text" className="coleta-w100" />
+              <input
+                {...register("estado")}
+                type="text"
+                className="coleta-w100"
+              />
             </div>
           </div>
 
