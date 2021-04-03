@@ -17,8 +17,19 @@ const Home = () => {
         </Link>
       </Header>
 
-      <div>
+      <div className="home-container">
+        <div className="home-left">
+         <h1> Colabore na educação de uma criança </h1>
+         <p>
+         Esta é uma Campanha para ajudar crianças que não tem condições de comprar seus materias escolares. 
+Você pode colaborar com materiais novos ou usados levando nos pontos de coleta. Saiba mais sobre a campanha
+         </p>
+      
+        </div>
+
+        <div className="home-right">
         <MainImage />
+      </div>
       </div>
     </>
   )
