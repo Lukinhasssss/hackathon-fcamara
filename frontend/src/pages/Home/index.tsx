@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom"
 
 import Header from "../../core/components/Header"
+
 import { ReactComponent as BookIcon } from '../../core/assets/images/book.svg';
+import { ReactComponent as SearchIcon } from '../../core/assets/images/search.svg';
 import { ReactComponent as MainImage } from '../../core/assets/images/main.svg';
 import './styles.css'
 
@@ -18,18 +20,44 @@ const Home = () => {
       </Header>
 
       <div className="home-container">
-        <div className="home-left">
-         <h1> Colabore na educação de uma criança </h1>
-         <p>
-         Esta é uma Campanha para ajudar crianças que não tem condições de comprar seus materias escolares. 
-Você pode colaborar com materiais novos ou usados levando nos pontos de coleta. Saiba mais sobre a campanha
-         </p>
-      
+        <div className="home-content-left">
+          <div className="center-content">
+            <h1 className="home-title">
+              Colabore na educação <br /> de uma criança
+            </h1>
+          </div>
+
+          <div className="center-content">
+            <p className="home-description">
+              Esta é uma Campanha para ajudar crianças que não tem condições <br /> de comprar seus materias escolares.
+              <br />Você pode colaborar com materiais novos ou usados levando nos <br /> pontos de coleta.
+            </p>
+          </div>
+
+          <div className="input-container">
+            <span className="home-input-text">Digite a cidade</span>
+            <input type="text" className="home-input" />
+          </div>
+
+          <div className="center-content">
+            <button className="home-button">
+              <SearchIcon />
+              <p>Localizar pontos</p>
+            </button>
+          </div>
+
+          <div className="show-on-mobile">
+            <p>OU</p>
+            <Link to='/cadastro' className="cadastrar-doacao">
+              <BookIcon />
+              <span>Cadastre um ponto de doação</span>
+            </Link>
+          </div>
         </div>
 
-        <div className="home-right">
-        <MainImage />
-      </div>
+        <div className="home-content-right">
+          <MainImage className="home-content-img" />
+        </div>
       </div>
     </>
   )
