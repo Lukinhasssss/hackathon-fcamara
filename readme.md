@@ -12,7 +12,7 @@
 [Spring Tool Suit](https://spring.io/tools): Para poder iniciar o projeto
 
 ## Frontend
-<p>Para executar o backend do projeto, será necessário instalar os seguintes programas:</p>
+<p>Para executar o frontend do projeto, será necessário instalar os seguintes programas:</p>
 
 [NodeJs](https://nodejs.org/en/) </br>
 [Visual Studio Code](https://code.visualstudio.com/download): Para poder iniciar o projeto
