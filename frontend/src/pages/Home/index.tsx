@@ -1,15 +1,21 @@
 import { Link } from "react-router-dom"
+import { useContext } from "react";
 
 import Header from "../../core/components/Header"
+import { ColetaContext } from "../../ColetaContext";
 
 import { ReactComponent as BookIcon } from '../../core/assets/images/book.svg';
 import { ReactComponent as SearchIcon } from '../../core/assets/images/search.svg';
 import { ReactComponent as MainImage } from '../../core/assets/images/main.svg';
 import './styles.css'
 
-
-
 const Home = () => {
+  const { cidade, setCidade } = useContext(ColetaContext)
+
+  const handleOnChangeCidadeDigitada = (event: any) => {
+    setCidade(event.target.value)
+  }
+
   return (
     <>
       <Header>
@@ -36,19 +42,24 @@ const Home = () => {
 
           <div className="input-container">
             <span className="home-input-text">Digite a cidade</span>
-            <input type="text" className="home-input" />
+            <input
+              type="text"
+              value={ cidade }
+              onChange={ handleOnChangeCidadeDigitada }
+              className="home-input"
+            />
           </div>
 
           <div className="center-content">
-            <button className="home-button">
+            <Link to={ `/pontosdecoleta` } className="home-button"  onClick={ () => setCidade(cidade) }>
               <SearchIcon />
               <p>Localizar pontos</p>
-            </button>
+            </Link>
           </div>
 
           <div className="show-on-mobile">
             <p>OU</p>
-            <Link to='/cadastro' className="cadastrar-doacao">
+            <Link to='/pontosdecoleta' className="cadastrar-doacao">
               <BookIcon />
               <span>Cadastre um ponto de doação</span>
             </Link>

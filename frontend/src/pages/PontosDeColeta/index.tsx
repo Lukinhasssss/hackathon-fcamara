@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useContext, useEffect, useState } from 'react'
+import { ColetaContext } from '../../ColetaContext'
 import BackButton from '../../core/components/BackButton'
 import Header from '../../core/components/Header'
 import PontoDeColeta from '../../core/components/PontoDeColeta'
@@ -8,11 +9,17 @@ import './styles.css'
 
 const PontosDeColeta = () => {
   const [respostaColeta, setRespostaColeta] = useState<RespostaColeta>()
+  const { cidade } = useContext(ColetaContext)
+  console.log(cidade)
+
+  const getPontosDeColeta = useCallback(() => {
+    makeRequest({ url: '/pontosdecoleta', params: { cidade } })
+      .then(resposta => setRespostaColeta(resposta.data))
+  }, [cidade])
 
   useEffect(() => {
-    makeRequest({ url: '/pontosdecoleta' })
-      .then(resposta => setRespostaColeta(resposta.data))
-  }, [])
+    getPontosDeColeta()
+  }, [getPontosDeColeta])
 
   return (
     <>
