@@ -35,3 +35,27 @@
   line-height: 26px;
   color: var(--gray);
 }
+
+@media (max-width: 940px) {
+  .ponto-de-coleta-container {
+    width: 320px;
+    height: 380px;
+  }
+
+  .ponto-de-coleta-container .ponto-de-coleta-img-container {
+    width: 288px;
+    height: 177px;
+  }
+}
+
+@media (max-width: 360px) {
+  .ponto-de-coleta-container {
+    width: 280px;
+    height: 380px;
+  }
+
+  .ponto-de-coleta-container .ponto-de-coleta-img-container {
+    width: 248px;
+    height: 177px;
+  }
+}

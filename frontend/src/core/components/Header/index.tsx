@@ -10,7 +10,7 @@ const Header = ({ children }: Props) => {
   return (
     <div className="header-container">
       <Link to='/'>
-        <Logo />
+        <Logo className="header-img" />
       </Link>
 
       { children }

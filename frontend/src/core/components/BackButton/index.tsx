@@ -7,7 +7,7 @@ const BackButton = () => {
     <div>
       <Link to='/' className="back-button-content">
         <BackIcon />
-        <span>Voltar para a página inicial</span>
+        <span className="d-none">Voltar para a página inicial</span>
       </Link>
     </div>
   )
