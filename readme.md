@@ -3,14 +3,6 @@
 </h1>
 <p align="center">🚀 Projeto desenvolvido pelo Squad 21 durante o hackathon fcamara que ocorreu de 22/03/2021 à 05/04/2021</p>
 
-# Tabela de conteúdos
-
-<p align="center">
- <a href="#comecando">Começando</a> •
- <a href="#clonando">Clonando o projeto</a> • 
- <a href="#iniciando">Como iniciar o projeto</a> • 
-</p>
-
 # Começando
 ## Backend
 
