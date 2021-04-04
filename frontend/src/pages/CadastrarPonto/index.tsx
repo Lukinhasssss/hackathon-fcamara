@@ -1,4 +1,6 @@
 import { useForm } from 'react-hook-form'
+import { useHistory } from 'react-router'
+import { toast } from 'react-toastify';
 
 import Header from '../../core/components/Header'
 import BackButton from '../../core/components/BackButton'
@@ -18,6 +20,7 @@ type FormData = {
 
 const CadastrarPonto = () => {
   const { handleSubmit, register } = useForm<FormData>()
+  const history = useHistory()
 
   const onSubmit = (data: FormData) => {
     makeRequest({
@@ -25,9 +28,8 @@ const CadastrarPonto = () => {
       method: 'POST',
       data: data
     }).then(() => {
-
-    }).catch(() => {
-
+      toast.info('Ponto cadastrado com sucesso')
+      history.push('/')
     })
   }
 
