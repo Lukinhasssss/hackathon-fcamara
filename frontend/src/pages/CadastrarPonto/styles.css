@@ -1,0 +1,192 @@
+.cadastro-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+.cadastro-content {
+  width: 900px;
+  padding: 50px 100px;
+  border-radius: 8px;
+  background-color: #FFF;
+}
+
+.cadastro-container h1 {
+  text-align: center;
+  font-size: 32px;
+  line-height: 48px;
+  color: var(--primary);
+  margin-bottom: 50px;
+}
+
+.cadastro-container h2 {
+  font-size: 24px;
+  line-height: 48px;
+  color: var(--primary);
+  margin-bottom: 30px;
+}
+
+.cadastro-container span {
+  display: block;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.coleta-w100 {
+  width: 100%;
+  height: 60px;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  margin-bottom: 20px;
+
+  padding: 20px;
+  font-size: 20px;
+  line-height: 26px;
+  color: #464943;
+  background-color: #f5f5f5;
+  outline: 0;
+}
+
+input:focus {
+  box-shadow: 0 0 1pt 1pt #102E59;
+}
+
+.coleta-column-2 {
+  display: grid;
+  grid-template-columns: 9fr 3fr;
+  column-gap: 30px;
+}
+
+.cadastro-content .submit-button {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.cadastro-content .submit-button button {
+  width: 320px;
+  height: 60px;
+  border: 0;
+  border-radius: 8px;
+  background-color: var(--secondary);
+  cursor: pointer;
+}
+
+.cadastro-content .submit-button button p {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  color: #FFF;
+}
+
+.coleta-column-number input {
+  text-align: center;
+}
+
+.coleta-column-estado input {
+  text-align: center;
+}
+
+/* Properties to remove arrows from input type number */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+@media (max-width: 1100px) {
+  .cadastro-content {
+    width: 700px;
+  }
+}
+
+@media (max-width: 900px) {
+  .coleta-column-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 30px;
+  }
+
+  .cadastro-content {
+    width: 90%;
+  }
+
+  .coleta-column-number input {
+    text-align: start;
+  }
+  
+  .coleta-column-estado input {
+    text-align: start;
+  }
+}
+
+@media (max-width: 450px) {
+  .cadastro-content {
+    width: 90%;
+    padding: 30px 30px;
+  }
+
+  .cadastro-container h1 {
+    text-align: center;
+    font-size: 28px;
+    line-height: 34px;
+    color: var(--primary);
+    margin-bottom: 50px;
+  }
+
+  .cadastro-container h2 {
+    font-size: 20px;
+    line-height: 26px;
+    color: var(--primary);
+    margin-bottom: 30px;
+  }
+
+  .coleta-w100 {
+    height: 50px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .cadastro-content .submit-button button {
+    width: 100%;
+    height: 50px;
+  }
+  
+  .cadastro-content .submit-button button p {
+    font-size: 16px;
+    line-height: 23px;
+  }
+}
+
+@media (max-width: 320px) {
+  .cadastro-content {
+    width: 90%;
+    padding: 30px 20px;
+  }
+
+  .cadastro-container h1 {
+    text-align: center;
+    font-size: 28px;
+    line-height: 34px;
+    color: var(--primary);
+    margin-bottom: 50px;
+  }
+
+  .cadastro-container h2 {
+    font-size: 20px;
+    line-height: 26px;
+    color: var(--primary);
+    margin-bottom: 30px;
+  }
+}

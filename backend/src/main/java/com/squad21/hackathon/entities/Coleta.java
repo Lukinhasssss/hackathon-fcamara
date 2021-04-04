@@ -18,23 +18,22 @@ public class Coleta implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
+	private String imgUrl;
 	private String logradouro;
 	private String numero;
 	private String bairro;
-	private String complemento;
-	private String cep;
 	private String cidade;
 	private String estado;
 	
 	public Coleta() {}
 
-	public Coleta(Long id, String nome, String logradouro, String numero, String bairro, String complemento, String cep, String cidade, String estado) {
+	public Coleta(Long id, String nome, String imgUrl, String logradouro, String numero, String bairro, String cidade, String estado) {
 		this.id = id;
+		this.nome = nome;
+		this.imgUrl = imgUrl;
 		this.logradouro = logradouro;
 		this.numero = numero;
 		this.bairro = bairro;
-		this.complemento = complemento;
-		this.cep = cep;
 		this.cidade = cidade;
 		this.estado = estado;
 	}
@@ -53,6 +52,14 @@ public class Coleta implements Serializable {
 	
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public String getImgUrl() {
+		return imgUrl;
+	}
+
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
 	}
 
 	public String getLogradouro() {
@@ -77,22 +84,6 @@ public class Coleta implements Serializable {
 
 	public void setBairro(String bairro) {
 		this.bairro = bairro;
-	}
-
-	public String getComplemento() {
-		return complemento;
-	}
-
-	public void setComplemento(String complemento) {
-		this.complemento = complemento;
-	}
-
-	public String getCep() {
-		return cep;
-	}
-
-	public void setCep(String cep) {
-		this.cep = cep;
 	}
 	
 	public String getCidade() {

@@ -24,11 +24,10 @@ public class ColetaService {
 	public ColetaDTO insert(ColetaDTO coletaDTO) {
 		Coleta pontoDeColeta = new Coleta();
 		pontoDeColeta.setNome(coletaDTO.getNome());
+		pontoDeColeta.setImgUrl(coletaDTO.getImgUrl());
 		pontoDeColeta.setLogradouro(coletaDTO.getLogradouro());
 		pontoDeColeta.setNumero(coletaDTO.getNumero());
 		pontoDeColeta.setBairro(coletaDTO.getBairro());
-		pontoDeColeta.setComplemento(coletaDTO.getComplemento());
-		pontoDeColeta.setCep(coletaDTO.getCep());
 		pontoDeColeta.setCidade(coletaDTO.getCidade());
 		pontoDeColeta.setEstado(coletaDTO.getEstado());
 		
