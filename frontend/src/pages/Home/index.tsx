@@ -59,7 +59,7 @@ const Home = () => {
 
           <div className="show-on-mobile">
             <p>OU</p>
-            <Link to='/pontosdecoleta' className="cadastrar-doacao">
+            <Link to='/cadastro' className="cadastrar-doacao">
               <BookIcon />
               <span>Cadastre um ponto de doação</span>
             </Link>
